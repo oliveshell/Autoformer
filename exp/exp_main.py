@@ -1,3 +1,4 @@
+from multiprocessing.dummy import freeze_support
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
 from models import Informer, Autoformer, Transformer
@@ -315,3 +316,5 @@ class Exp_Main(Exp_Basic):
         np.save(folder_path + 'real_prediction.npy', preds)
 
         return
+if __name__ == '__main__':
+    freeze_support()
